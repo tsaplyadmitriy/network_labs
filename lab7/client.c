@@ -13,7 +13,7 @@
  
 #define LEN 25
 #define PORT 5431
-#define BUFF 521
+#define BUFF 512
  
 
  
@@ -84,6 +84,7 @@ int main(int argc, char ** argv)
     {
         
         int send_code = sendto(sockfd, send, strlen(send), 0, (struct sockaddr *) &server_addr, sizeof(server_addr)) ;
+        printf("Received:%s",send);
       if (send_code== -1) {
         perror("Error");
       }
